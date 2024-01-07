@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: gurugurume
+    ports: 
+      - "8080:8080"
+    volumes:
+      - .:/app
+    tty: true
