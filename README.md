@@ -1,8 +1,8 @@
 # gurugurume-api
 
-## 1.Docker Desctopのインストール
+## 1.Docker Desktopのインストール
 
-Docker Desctopをインストールしてない場合は先にインストール
+Docker Desktopをインストールしてない場合は先にインストール
 
 [macの方はこちら](https://matsuand.github.io/docs.docker.jp.onthefly/desktop/mac/install/)
 [windowsの方はこちら](https://matsuand.github.io/docs.docker.jp.onthefly/desktop/windows/install/)
@@ -12,7 +12,7 @@ Docker Desctopをインストールしてない場合は先にインストール
 docker-compose build
 ```
 #### ※注意点
-DockerDesctopを開いていないと下記のエラーが発生する.
+DockerDesktopを開いていないと下記のエラーが発生する.
 ```
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 ```
