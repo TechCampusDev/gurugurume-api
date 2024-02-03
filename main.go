@@ -1,13 +1,21 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"fmt"
+)
 
 func main() {
-	engine := gin.Default()
-	engine.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "hello world",
-		})
-	})
-	engine.Run(":8080")
+	router := gin.Default()
+
+	router.GET("/", getting)
+	router.GET("/post", post)
+
+	router.Run(":8080")
+}
+
+func create_db(){
+	db := dbConnect()
+	db.AutoMigrate(&User{})
+	fmt.Println("finished")
 }
