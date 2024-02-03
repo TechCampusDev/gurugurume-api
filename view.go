@@ -2,7 +2,23 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"fmt"
 )
+
+func hello(c *gin.Context){
+	c.JSON(200, gin.H{
+		"message": "hello world",
+	})
+}
+
+func dbtest(c *gin.Context){
+	db := dbConnect()
+	fmt.Println(db)
+
+	c.JSON(200, gin.H{
+		"message": "success",
+	})
+}
 
 func getting(c *gin.Context){
 	db := dbConnect()

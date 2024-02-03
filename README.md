@@ -30,6 +30,34 @@ docker-compose up -d
 ```
 docker-compose exec app go run main.go
 ```
-下記のサイトで{"message":"hello world"}と表示されたら完了。
+下記のサイトで{"message":"hello world"}と表示されたらDockerとGo(Gin)の環境構築完了。
 
 http://localhost:8080/
+
+## 5.PostgreSQLのインストール
+ローカル環境へPostgreSQLをインストールする。
+[ここからインストール](https://www.postgresql.jp/download)  
+```
+基本的に古すぎなければどのバージョンでも問題ないと思われる。version11では動くことを確認済み。
+```  
+ユーザ名やパスワードなどを設定すると思うので、保存しておく。  
+.local.envファイルの内容を.envファイルを作成しそこにコピーする。それぞれ、DB_USER = DB_PASS =に設定したユーザ名とパスワードを追記する。 
+
+## 6.データベースの作成
+コマンドプロンプトを開き以下のコマンドでpostgresにアクセスする。  
+```
+psql -U {自分の設定したユーザ名}
+```  
+パスワードを求められるので入力する。この時、入力内容は画面に表示されないが入力は出来ている。  
+次に以下のコマンドでデータベースを作成する。  
+```
+create database gurugurume;
+```
+
+## 7.動作確認
+```
+docker-compose exec app go run main.go
+```
+下記のサイトで{"message":success}と表示されたらPostgreSQLの環境構築完了。
+
+http://localhost:8080/db
