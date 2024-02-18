@@ -2,22 +2,23 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"fmt"
 )
 
 func main() {
 	router := gin.Default()
 
+	//sample
 	router.GET("/", hello)
 	router.GET("/db", dbtest)
 	router.GET("/get", getting)
 	router.GET("/post", post)
 
-	router.Run(":8080")
-}
+	//init_app
+	router.GET("/setenv", setEnv)
 
-func create_db(){
-	db := dbConnect()
-	db.AutoMigrate(&User{})
-	fmt.Println("finished")
+	//application
+	router.GET("/setup", setup)
+	router.GET("/checktoken", check_token)
+
+	router.Run(":8080")
 }
