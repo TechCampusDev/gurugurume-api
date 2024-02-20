@@ -38,7 +38,7 @@ http://localhost:8080/
 ローカル環境へPostgreSQLをインストールする。
 [ここからインストール](https://www.postgresql.jp/download)  
 ```
-基本的に古すぎなければどのバージョンでも問題ないと思われる。version11では動くことを確認済み。
+基本的に古すぎなければどのバージョンでも問題ないと思われる。version14では動くことを確認済み。
 ```  
 ユーザ名やパスワードなどを設定すると思うので、保存しておく。  
 .local.envファイルの内容を.envファイルを作成しそこにコピーする。それぞれ、DB_USER = DB_PASS =に設定したユーザ名とパスワードを追記する。 
@@ -59,7 +59,7 @@ create database gurugurume;
 
 ## 8.動作確認
 ```
-docker-compose exec app go run main.go
+docker-compose exec app go run .
 ```
 下記のサイトで{"message":success}と表示されたらPostgreSQLの環境構築完了。
 
