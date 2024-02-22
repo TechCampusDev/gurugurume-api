@@ -1,13 +1,24 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	engine := gin.Default()
-	engine.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "hello world",
-		})
-	})
-	engine.Run(":8080")
+	router := gin.Default()
+
+	//sample
+	router.GET("/", hello)
+	router.GET("/db", dbtest)
+	router.GET("/get", getting)
+	router.GET("/post", post)
+
+	//init_app
+	router.GET("/setenv", setEnv)
+
+	//application
+	router.GET("/setup", setup)
+	router.GET("/checktoken", check_token)
+
+	router.Run(":8080")
 }
