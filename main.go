@@ -9,6 +9,7 @@ func main() {
 
 	//sample
 	router.GET("/", hello)
+	router.GET("/getNearBy", getNearBy)
 	router.GET("/db", dbtest)
 	router.GET("/get", getting)
 	router.GET("/post", post)
