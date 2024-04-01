@@ -10,7 +10,7 @@ RUN go mod download
 COPY . .
 
 # アプリケーションをビルド
-RUN CGO_ENABLED=0 GOOS=linux go build -o myapp .
+RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
 # 実行ステージ
 FROM alpine:3.19
