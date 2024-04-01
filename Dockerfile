@@ -9,3 +9,5 @@ RUN go mod download
 COPY . .
 
 RUN go run .
+
+CMD ["./main"]
